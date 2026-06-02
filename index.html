@@ -3,39 +3,85 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Laboratorio JS y AJAX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio JavaScript y AJAX</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Laboratorio JavaScript y AJAX</h1>
+    <div class="contenedor">
 
-    <button onclick="esPalindromo()">Ejercicio 1</button>
-    <button onclick="numeroMayor()">Ejercicio 2</button>
-    <button onclick="mostrarVocales()">Ejercicio 3</button>
-    <button onclick="contarVocales()">Ejercicio 4</button>
-    <hr>
+        <header>
+            <h1>Laboratorio JavaScript y AJAX</h1>
+            <p>
+                Desarrollo de ejercicios JavaScript y AJAX
+            </p>
+        </header>
 
-    <h2>Ejercicios AJAX</h2>
+        <section>
+            <h2>Ejercicios JavaScript</h2>
 
-    <input type="text" id="recurso">
+            <div class="botones-js">
 
-    <button onclick="mostrarContenido()">
-        Mostrar Contenido
-    </button>
+                <button onclick="esPalindromo()">
+                    Ejercicio 1 - Palíndromo
+                </button>
 
-    <h3>Estado de la petición</h3>
-    <div id="estados"></div>
+                <button onclick="numeroMayor()">
+                    Ejercicio 2 - Número Mayor
+                </button>
 
-    <h3>Cabeceras HTTP</h3>
-    <pre id="cabeceras"></pre>
+                <button onclick="mostrarVocales()">
+                    Ejercicio 3 - Mostrar Vocales
+                </button>
 
-    <h3>Contenido</h3>
-    <pre id="contenidos"></pre>
+                <button onclick="contarVocales()">
+                    Ejercicio 4 - Contar Vocales
+                </button>
 
-    <h3>Código HTTP</h3>
-    <div id="codigo"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Ejercicios AJAX</h2>
+
+            <label for="recurso">
+                URL o recurso a consultar:
+            </label>
+
+            <div class="ajax-control">
+
+                <input
+                    type="text"
+                    id="recurso"
+                    placeholder="Ingrese una URL o recurso">
+
+                <button onclick="mostrarContenido()">
+                    Mostrar Contenido
+                </button>
+
+            </div>
+
+            <div class="resultado">
+
+                <h3>Estado de la petición</h3>
+                <div id="estados"></div>
+
+                <h3>Cabeceras HTTP</h3>
+                <pre id="cabeceras"></pre>
+
+                <h3>Contenido</h3>
+                <pre id="contenidos"></pre>
+
+                <h3>Código HTTP</h3>
+                <div id="codigo"></div>
+
+            </div>
+
+        </section>
+
+    </div>
 
     <script src="script.js"></script>
 
