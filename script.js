@@ -86,3 +86,84 @@ function contarVocales() {
         "U = " + contador.u
     );
 }
+// ==========================
+// AJAX 1
+// Mostrar URL por defecto
+// ==========================
+window.onload = function () {
+
+    document.getElementById("recurso").value =
+        window.location.href;
+
+};
+
+
+// ==========================
+// AJAX 2, 3, 4 y 5
+// ==========================
+function mostrarContenido() {
+
+    let url =
+        document.getElementById("recurso").value;
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+
+        actualizarEstado(xhr);
+
+        if (xhr.readyState === 4) {
+
+            document.getElementById("contenidos")
+                .textContent = xhr.responseText;
+
+            document.getElementById("cabeceras")
+                .textContent =
+                xhr.getAllResponseHeaders();
+
+            document.getElementById("codigo")
+                .textContent =
+                xhr.status + " - " + xhr.statusText;
+        }
+
+    };
+
+    xhr.open("GET", url, true);
+
+    xhr.send();
+}
+
+
+// ==========================
+// Mostrar estado AJAX
+// ==========================
+function actualizarEstado(xhr) {
+
+    let estado = "";
+
+    switch (xhr.readyState) {
+
+        case 0:
+            estado = "No iniciada";
+            break;
+
+        case 1:
+            estado = "Conexión establecida";
+            break;
+
+        case 2:
+            estado = "Solicitud recibida";
+            break;
+
+        case 3:
+            estado = "Procesando";
+            break;
+
+        case 4:
+            estado = "Completada";
+            break;
+    }
+
+    document.getElementById("estados")
+        .textContent = estado;
+}
